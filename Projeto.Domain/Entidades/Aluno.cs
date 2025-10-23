@@ -6,20 +6,22 @@ using System.Threading.Tasks;
 
   namespace Projeto.Domain.EnTidads
 {
-    internal class Aluno
+    public class Aluno
     {
-        public Aluno(string nome, string cPF, string rA, string eMAIL)
+        public Aluno(int IDaluno, string nome, string cPF, string rA, string eMAIL)
         {
+            this.IDaluno = IDaluno;
             this.nome = nome;
-            CPF = cPF;
-            RA = rA;
-            EMAIL = eMAIL;
+            this.CPF = cPF;
+            this.RA = RA;
+            this.email = email;
         }
 
+        public int IDaluno { get; private set; }
         public string nome { get; private set; }
         public string CPF { get;  private set; }
         public string RA { get; private set; }
-        public string EMAIL { get; private set; }
+        public string email { get; private set; }
     }
 }
 
