@@ -1,21 +1,17 @@
 ﻿using Projeto.Domain.EnTidads;
-using Projeto.Domain.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Projeto.Domain.Interface;
+
 
 namespace Projeto.Data.Repository
 {
-    public class AlunoRepository : IAlunoRepository
+    public class CursoRepository : ICursoRepository
     {
-        public void Adicionar(Aluno aluno)
+        public void Adicionar(Curso aluno)
         {
             throw new NotImplementedException();
         }
 
-        public void Atualizar(Aluno aluno)
+        public void Atualizar(Curso aluno)
         {
             throw new NotImplementedException();
         }
@@ -25,22 +21,23 @@ namespace Projeto.Data.Repository
             throw new NotImplementedException();
         }
 
-        public Aluno ObterPorCPF(string CPF)
+        public Curso ObterPorMatricula(string matricula)
         {
             throw new NotImplementedException();
         }
 
-        public Aluno ObterPorID(int IDaluno)
+        public Curso ObterPorID(int IDcurso)
         {
             throw new NotImplementedException();
         }
 
-        public Aluno ObterPorRA(string RA)
+
+        public List<Curso> ObterTodos()
         {
             throw new NotImplementedException();
         }
 
-        public List<Aluno> ObterTodos()
+        public Curso ObterPorCurso(int Curso)
         {
             throw new NotImplementedException();
         }
