@@ -16,48 +16,27 @@ namespace Projeto.Aplication.Service
             _cursoRepository = cursoRepository;
         }
 
-        public void Adicionar(Curso aluno)
-        {
-            Curso buscaAluno = _cursoRepository.ObterPorID(Curso.IDCurso);
-
-            if (buscaAluno != null)
-            {
-                throw new Exception("Já Existe um curso cadastrado com esse CPF");
-            }
-
-            Curso BuscaAlunoMatricula = _cursoRepository.ObterPorID(Curso.IDCurso);
-            _cursoRepository.Adicionar(aluno);
-
-            if (buscaAluno != null)
-            {
-                throw new Exception("já existe um curso cadastrado com esse RA");
-            }
+        public void Adicionar(Curso curso)
+        { 
+            _cursoRepository.Adicionar(curso);
         }
 
-        public void Atualizar(Curso aluno)
+        public void Atualizar(Curso curso)
         {
-            Curso buscaCurso = _cursoRepository.ObterPorCurso(Curso.IDCurso);
+            Curso buscaCurso = _cursoRepository.ObterPorID(curso.IDCurso);
             if (buscaCurso == null)
             {
-                throw new Exception("Curso não existe");
+                throw new Exception("Curso não encontrado");
             }
 
-            buscaCurso = _cursoRepository.ObterPorCurso(Curso.curso);
-
-            if(buscaCurso != null && buscaCurso.IDCurso != Curso.IDCurso) 
-            { 
-            
-                throw new Exception("já existe um Aluno" + " Cadastrado com esse CPF");
-            }
-
-            _cursoRepository.Atualizar(Curso);
+            _cursoRepository.Atualizar(curso);
 
         }
 
         public void Deletar(int IDCurso)
         {
 
-            Curso buscaCurso = _cursoRepository.ObterPorCurso(IDCurso);
+            Curso buscaCurso = _cursoRepository.ObterPorID(IDCurso);
             if(buscaCurso == null)
             {
                 throw new Exception("Curso não encontrado");
@@ -72,14 +51,11 @@ namespace Projeto.Aplication.Service
             return _cursoRepository.ObterPorID(IDCurso);
         }
 
-        public Curso ObterPorCurso(int Curso)
-        {
-            return _cursoRepository.ObterPorCurso(Curso); 
-        }
+       
 
         public List<Curso> ObterTodos()
         {
-            throw new NotImplementedException();
+            return _cursoRepository.ObterTodos();
         }
     }
 }

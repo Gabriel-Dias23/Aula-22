@@ -14,6 +14,6 @@ namespace Projeto.Domain.Interface
         void Deletar(int IDcurso);
         public List<Curso> ObterTodos();
         public Curso ObterPorID(int IDcurso);
-        public Curso ObterPorCurso(int Curso);
+     
     }
 }

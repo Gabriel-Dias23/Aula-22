@@ -1,4 +1,5 @@
 ﻿using Projeto.Domain.Entidades;
+using Projeto.Domain.EnTidads;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,11 @@ namespace Projeto.Domain.Interface
     {
         public void Adicionar(Matricula matricula);
         public void Atualizar(Matricula matricula);
-        void Deletar(int IDmatricula);
-        public List<Matricula> ObterTodos();
+       public void Deletar(int IDmatricula);
+        public List<Matricula> ObterTodosPorCurso(int idCurso);
         public Matricula ObterPorID(int IDmatricula);
-        public Matricula ObterPorMatricula(int Matricula);
+        public Matricula ObterPorIDPorIdAluno(int idAluno, int idCurso);
+        List<Matricula> ObterTodosPorCurso();
+        Curso ObterPorID();
     }
 }

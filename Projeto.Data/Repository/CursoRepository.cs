@@ -21,10 +21,7 @@ namespace Projeto.Data.Repository
             throw new NotImplementedException();
         }
 
-        public Curso ObterPorMatricula(string matricula)
-        {
-            throw new NotImplementedException();
-        }
+   
 
         public Curso ObterPorID(int IDcurso)
         {
@@ -37,9 +34,6 @@ namespace Projeto.Data.Repository
             throw new NotImplementedException();
         }
 
-        public Curso ObterPorCurso(int Curso)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }
